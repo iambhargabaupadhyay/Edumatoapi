@@ -5,7 +5,7 @@ var bodParser = require('body-parser');
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 var morgan = require('morgan')
-var mongourl = "mongodb+srv://admin:Bhargaba@12@cluster0.u6dlt.mongodb.net/Edumato?retryWrites=true&w=majority";
+var mongourl = "mongodb+srv://admin:Bhargaba@12@cluster0.hqayh.mongodb.net/intern?retryWrites=true&w=majority";
 var cors = require('cors');
 var db;
 
@@ -21,7 +21,7 @@ app.get('/health',(req,res) => {
 });
 
 app.get('/',(req,res) => {
-    res.send(`<a href="http://localhost:7800/location" target="_blank">City</a> <br/> <a href="http://localhost:7800/mealtype" target="_blank">MealType</a> <br/> <a href="http://localhost:7800/cuisine" target="_blank">Cuisine</a> <br/> <a href="http://localhost:7800/restaurents" target="_blank">Restaurents</a> <br/> <a href="http://localhost:7800/orders" target="_blank">Orders</a>`)
+    res.send(`<a href="https://bhargabaapi.herokuapp.com/location" target="_blank">City</a> <br/> <a href="https://bhargabaapi.herokuapp.com/mealtype" target="_blank">MealType</a> <br/> <a href="https://bhargabaapi.herokuapp.com/cuisine" target="_blank">Cuisine</a> <br/> <a href="https://bhargabaapi.herokuapp.com/restaurents" target="_blank">Restaurents</a> <br/> <a href="https://bhargabaapi.herokuapp.com/orders" target="_blank">Orders</a>`)
 })
 
 //List of city
@@ -142,7 +142,7 @@ app.put('/updateorders',(req,res) => {
 
 MongoClient.connect(mongourl,(err,connection) => {
     if(err) throw err;
-    db = connection.db('Edumato');
+    db = connection.db('intern');
     app.listen(port,(err) => {
         if(err) throw err;
         console.log(`Server is running on port ${port}`)
